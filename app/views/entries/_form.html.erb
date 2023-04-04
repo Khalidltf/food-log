@@ -51,6 +51,13 @@
     </div>
   </div>
 
+  <div class="field">
+    <%= form.label :category, class:"label", style: "display: block" %>
+    <div class="select">
+      <%= form.select :category_id, Category.all.collect {|u| [u.title, u.id]}%>
+    </div>
+  </div>
+
   <br>
   <div class="buttons">
     <%= form.submit class:"button is-success" %>
