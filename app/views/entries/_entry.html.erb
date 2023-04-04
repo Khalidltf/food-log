@@ -1,22 +1,42 @@
-<div id="<%= dom_id entry %>">
-  <p>
-    <strong>Meal type:</strong>
-    <%= entry.meal_type %>
-  </p>
 
-  <p>
-    <strong>Calories:</strong>
-    <%= entry.calories %>
-  </p>
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4"> Meal </p>
+        <p class="subtitle is-6"><%= entry.meal_type %></p>
+      </div>
+  </div>
 
-  <p>
-    <strong>Protiens:</strong>
-    <%= entry.protiens %>
-  </p>
+  <div class="content">
+    <div id="<%= dom_id entry %>">
 
-  <p>
-    <strong>Fats:</strong>
-    <%= entry.fats %>
-  </p>
 
+      <p>
+        <strong>Calories:</strong>
+        <%= entry.calories %>
+      </p>
+
+      <p>
+        <strong>Protiens:</strong>
+        <%= entry.protiens %>
+      </p>
+
+      <p>
+        <strong>carbohydrates:</strong>
+        <%= entry.carbohydrates %>
+      </p>
+
+      <p>
+        <strong>Fats:</strong>
+        <%= entry.fats %>
+      </p>
+      <time datetime="2016-1-1" class="italic"> Logged <%= time_ago_in_words(entry.created_at) %> ago</time>
+    </div>
+  </div>
 </div>

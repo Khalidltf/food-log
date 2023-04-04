@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @entry %>
-
-<div>
-  <%= link_to "Edit this entry", edit_entry_path(@entry) %> |
-  <%= link_to "Back to entries", entries_path %>
-
-  <%= button_to "Destroy this entry", @entry, method: :delete %>
+<div class="columns is-centered mt-6">
+  <div class="column is-one-third">
+    <div>
+      <br>
+      <%= render @entry %>
+    </div>
+    <br>
+    <div class="buttons">
+      <%= link_to "Edit", edit_entry_path(@entry), class:"button is-primary"%>
+      <%= link_to "Back", entries_path, class:"button is-link" %>
+      <%= button_to "Destroy", @entry, method: :delete, class:"button is-danger" %>
+    </div>
+  </div>
 </div>

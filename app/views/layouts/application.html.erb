@@ -8,9 +8,37 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%# bulma tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
   </head>
 
-  <body>
-    <%= yield %>
+  <body >
+    <%# header %>
+    <%= render 'home/header' %>
+
+    <%# notice %>
+    <% if notice.present?%>
+      <div class="notification is-primary is-light">
+        <button class="delete"></button>
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <%# alert %>
+    <% if alert.present?%>
+      <div class="notification is-danger is-light">
+        <button class="delete"></button>
+        <%= alert %>
+      </div>
+    <% end %>
+
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
+  <%# <%= render 'home/footer' %>
 </html>

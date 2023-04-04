@@ -1,37 +1,58 @@
 <%= form_with(model: entry) do |form| %>
   <% if entry.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+    <div class="mesage is-danger">
+      <div class="message-header"></div>
+        <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+      </div>
 
-      <ul>
-        <% entry.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+      <div class="message-body">
+        <ul>
+          <% entry.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :meal_type, style: "display: block" %>
-    <%= form.text_field :meal_type %>
+  <div class="field">
+    <%= form.label :meal, class:"label", style: "display: block" %>
+    <div class="control">
+      <%= form.text_field :meal_type, class:"input", type:"text"%>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :calories, style: "display: block" %>
-    <%= form.number_field :calories %>
+  <div class="field">
+    <%= form.label :calories, class:"label", style: "display: block" %>
+    <div class="control">
+      <%= form.number_field :calories, class:"input", type:"number"%>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :protiens, style: "display: block" %>
-    <%= form.number_field :protiens %>
+
+  <div class="field">
+    <%= form.label :protiens, class:"label", style: "display: block" %>
+    <div class="control">
+      <%= form.number_field :protiens, class:"input", type:"number"%>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :fats, style: "display: block" %>
-    <%= form.number_field :fats %>
+  <div class="field">
+    <%= form.label :carbohydrates, class:"label", style: "display: block" %>
+    <div class="control">
+      <%= form.number_field :carbohydrates, class:"input", type:"number"%>
+    </div>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="field">
+    <%= form.label :fats, class:"label", style: "display: block" %>
+    <div class="control">
+      <%= form.number_field :fats, class:"input", type:"number"%>
+    </div>
+  </div>
+
+  <br>
+  <div class="buttons">
+    <%= form.submit class:"button is-success" %>
   </div>
 <% end %>
